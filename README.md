@@ -4,3 +4,4 @@ cd ~/Downloads/kanata_linux_amd64
 chmod +x kanata_linux_x64
 ./kanata_linux_x64 --version
 sudo ./kanata_linux_x64
+
