@@ -1,0 +1,166 @@
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc prtsc home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    del   end  pgdn
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer clmk     
+  _     q     w     f     p     b     _     _     j     l     u     y     _     '    prtsc prtsc _ 
+  tab   a   r   s   t   g     lctl     rctl     m     n   e   i   o   S-'            C-c C-v C-x
+  lsft     z     x     c     d     v     lmet     rmet     k     h     ,    .     lsft 
+  caps     _     /     spc  @._l _     lalt     @sNav   @bNum   \     _     _
+  _     _     _              ret            _     _     _
+)
+(deflayer clmk2*#  
+  _     q     w     f     p     b     _     _     j     l     u     y     _     '    _ _ _ 
+  tab   a   r   s   t   g     lctl     rctl     m     n   e   i   o   S-'                 _ _ _ 
+  lsft     z     x     c     d     v     lmet     rmet     k     h     ,    .     lsft
+  caps     _     /     spc  @._l2 _     lalt     @sNav   @bNum   \     _     _
+  _     _     _              spc            _     _     _
+)
+
+(deflayer qwerty
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc      _ _ _ 
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \           _ _ _ 
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet @clmk
+)
+
+(deflayer Num  
+  _     S-1   S-2   S-3   S-4   S-5   _     _     S-6   S-7   S-8   S-9   S-0   S-`  _ _ _   
+  =     1     2     3     4     5     _     _     6     7     8     9     0     S-`   _  _ _ 
+  _     S--   -     +     [     ]     _     _     S-[   S-]   ;     S-;   S-\
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _              _              _     _     _
+)
+
+(deflayer Nav 
+  _     _    home  up    M-.   C-A-g  _     _     pgup     C-z     C-y     home     _    _      _ _ _ 
+  =     @ml  left  down  rght  pgdn  _     _     prtsc   lctl   lsft  home   end      _        _ _ _ 
+  _     _    C-A-e     C-c      C-v    _     _     _     _     _      C-v      C-v      C-v
+  _     _    _     bspc     del     _     _     _     bspc     _     _     _
+  _     _    _              _              _     _     _
+)
+(deflayer whatsapp  
+  _     @emj1   @emj2   @emj3   @emj4   @emj5   _     _     @emj6   @emj7   @emj10   @emj12   @emj13   S-`    _  _ _ 
+  =     @emoji-combo  @emj23  @emj15   @emj16  @emj17     _     _     @emj18  @emj19   @emj20  @emj21 @emj22     S-`     _ _ _ 
+  _     @emj14   @emj24    _  _  _      @emj8    @emj9    _  _ _   _   _
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _          _              _      _        _     _     _
+)
+
+
+
+(deflayer programming 
+  _     S-A-i   _  C-S-ret  _     _     _     _     _     C-ret     C-A-up     A-up     S-A-i    _        _ _ _ 
+  _     C-A-a     C-S-k     C-A-n    C-d     _     _     _     _     C-S-l     C-A-down   A-down     C-/    _         _ _ _
+  _     _    _     _     _     _     _     _     _     _     _     _     _
+  _     _    _     spc     bspc     _     _     _     bspc     _     _     _
+  _     _    _              _              _     _     _
+)
+
+;; Delete Line	Ctrl + Shift + K
+;; Alt+Up / Alt+Down	Move Line	Moves the current line up or down.
+;; Ctrl+Enter	Add Line Below	Inserts a new line below the cursor.
+;; Ctrl+Shift+Enter	Add Line Above	Inserts a new line above the cursor.
+;; Ctrl+Alt+Up/Down	Add Cursor	Adds another cursor above or below the current one.
+;; Ctrl+D	copy line down
+;; Ctrl+Shift+L	Select All Occurrences	Places a cursor on every instance of the selected word.
+;; Shift+Alt+I	Add Cursors to Line Ends	Puts a cursor at the end of every selected line.
+;; Ctrl+/	Toggle Line Comment	Comments or uncomments the current line(s).
+
+(deflayer dotlayer
+  grv  q  @mwup @mwup @mwup  @mwbup _  _   j   mlft  @mup  mrgt  = S-0      _ _ _ 
+  tab  @slw @mwlt  @mwdn @mwrt @mwbdn y    u    @mblt @mlt @mdn @mrt @slw  @slw      _ _ _ 
+  caps C-z   C-x   @fpd  @fpu  C-y  h    j    j    /    S-.    '    S-+
+  lsft z     x     mlft tab  b    n    _      _       . /    _
+  lctl lmet lalt           ret            ralt rmet rctl
+)
+
+(defalias
+  clmk (layer-switch clmk)
+  bNum (tap-hold 175 175 bspc (layer-toggle Num))
+  sNav (layer-toggle Nav)
+)
+
+(defalias
+  aS (tap-hold 150 150 a lsft)
+  oS (tap-hold 150 150 o lsft)
+  rM (tap-hold 200 200 r lmet)
+  iM (tap-hold 200 200 i rmet)
+  nC (tap-hold 200 200 n lctl)
+  tC (tap-hold 200 200 t lctl)
+  sA (tap-hold 200 200 s lalt)
+  eA (tap-hold 200 200 e lalt)
+  ._l (layer-toggle programming)
+  ._l2 (layer-toggle whatsapp)
+)
+
+;; mouse controls
+(defalias
+mwup (mwheel-up 125 120)
+mwdn (mwheel-down 125 120)
+mwlt (mwheel-left 125 120)
+mwrt (mwheel-right 125 120)
+mwbup (mwheel-up 125 1920)
+mwbdn (mwheel-down 125 1920)
+fpu (mwheel-up 15 30000)
+fpd (mwheel-down 15 30000)
+
+mup (movemouse-up 30 25)
+mdn (movemouse-down 30 25)
+mlt (movemouse-left 30 25)
+mrt (movemouse-right 30 25)
+mbrt (movemouse-right 100 100)
+mblt (movemouse-left 100 100)
+
+slw (movemouse-speed 20)
+)
+
+
+(defcfg
+  sequence-input-mode visible-backspaced
+  concurrent-tap-hold yes
+  movemouse-inherit-accel-state yes
+  movemouse-smooth-diagonals yes
+  linux-x11-repeat-delay-rate 175,32
+
+
+)
+(defalias
+  ml (macro home S-end)
+)
+(defalias
+    ;; Individual emojis
+    emj1 (unicode 😊)
+    emj2 (unicode 🤣)
+    emj3 (unicode 👍)
+    emj4 (unicode 🫣)
+    emj5 (unicode 🥲)
+    emj6 (unicode 😭)
+    emj7 (unicode 💗)
+    emj8 (unicode 👉)
+    emj9 (unicode 👈)
+    emj10 (unicode ✨)
+    emj11 (unicode 😇)
+    emj12 (unicode 😁)
+    emj13 (unicode 🤧)
+    emj14 (unicode 🙃)
+    emj15 (unicode 🧐)
+    emj16 (unicode 🤗) 
+    emj17 (unicode 😅)
+    emj18 (unicode 😑)
+    emj19 (unicode 🥺)
+    emj20 (unicode 😉)
+    emj21 (unicode 🙂)
+    emj22 (unicode 😇)
+    emj23 (unicode 👻)
+    emj24 (unicode 👌)
+)
+(defalias
+    ;; Combine multiple emoji keys in sequence
+    emoji-combo (macro @emj8 @emj9 )
+)
