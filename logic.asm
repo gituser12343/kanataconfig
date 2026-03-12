@@ -52,37 +52,43 @@ _start:
     ; i. AND
     mov rax, r8
     and rax, r9 ; Performs bitwise AND
-    call print_res_val, res_and
+    mov rsi, res_and
+    call print_res_val
 
     ; ii. OR
     mov rax, r8
     or rax, r9 ; Performs bitwise OR
-    call print_res_val, res_or
+    mov rsi, res_or
+    call print_res_val
 
     ; iii. NOT (Applied to first number)
     mov rax, r8
     not al ; Performs bitwise NOT
     and rax, 0x0F ; Masking to keep it within 4 bits for display
-    call print_res_val, res_not
+    mov rsi, res_not
+    call print_res_val
 
     ; iv. XOR
     mov rax, r8
     xor rax, r9 ; Performs bitwise XOR
-    call print_res_val, res_xor
+    mov rsi, res_xor
+    call print_res_val
 
     ; v. NOR (NOT of OR)
     mov rax, r8
     or rax, r9
     not al ; NOR is OR followed by NOT
     and rax, 0x0F
-    call print_res_val, res_nor
+    mov rsi, res_nor
+    call print_res_val
 
     ; vi. NAND (NOT of AND)
     mov rax, r8
     and rax, r9
     not al ; NAND is AND followed by NOT
     and rax, 0x0F
-    call print_res_val, res_nand
+    mov rsi, res_nand
+    call print_res_val
 
     ; Exit
     mov rax, 60 ; sys_exit
@@ -110,4 +116,3 @@ print_res_val:
     mov rdx, 1
     syscall
     ret
-Use code with caution
